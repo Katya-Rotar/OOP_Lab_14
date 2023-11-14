@@ -16,8 +16,14 @@
             ExcellentStudents student = new ExcellentStudents(firstName, lastName, mark);
             students.Add(student);
         }
-        var output = students.Where(m => m.Mark.Contains(6));
-        foreach (var student in output) {
+        var output_1 = students.Where(m => m.Mark.Contains(6));
+        foreach (var student in output_1) {
+            Console.WriteLine(student);
+        }
+        Console.WriteLine("\n");
+        var output_2 = students.Where(m => m.Mark.Count(c => c <= 3) >= 2);
+        foreach (var student in output_2)
+        {
             Console.WriteLine(student);
         }
     }
